@@ -14,3 +14,10 @@ def index(request):
         'post' : db,
     }
     return render(request, 'blog/index.html', context)
+
+
+def articless(request,year):
+    year=year
+    str = year
+    
+    return HttpResponse(year)

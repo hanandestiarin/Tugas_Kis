@@ -14,8 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from . import views
-from django.urls import path
+from django.urls import path, re_path
 
+from . import views
+
+app_name = 'blog'
 urlpatterns = [
-    path('', view=views.index)
+    path('', view=views.index, name='index'),
+    path('articles/',views.articless, name='articles'),
+    path('post/', views.articless, name='post'),
+    re_path(r'^articles/(?P<year>[0-9]{4})/$',views.articless)
 ]
+
+# urlpatterns = [
+#     re_path(r'^articles/(?P<year>[0-9]{4})/$',views.articles),
+# ]
