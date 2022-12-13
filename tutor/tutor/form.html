@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This Is Django Muse Page</title>
+</head>
+<body>
+<form method='POST'>
+    {%csrf_token %}
+    <table>{{classform.as_table}}</table>
+    <label for="nama">Nama : </label>
+    <input type="text" name="nama" id="nama">
+    <br>
+    <label for="alamat">Alamat : </label>
+    <input type="text" name="alamat" id="alamat">
+    <br>
+    <button type="submit">Kirim</button>
+</form>
+
+<h2>{{nama}}  {{namac}}</h2>
+<h2>{{alamat}} {{alamat}}</h2>
+</body>
+</html>
